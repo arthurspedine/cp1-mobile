@@ -9,7 +9,7 @@ export default function ResultScreen({ route }) {
         <Text style={styles.texto}>Valor Original: R${route.params?.valorProduto}</Text>
         <Text style={styles.texto}>Porcentagem de Aumento: {route.params?.porcentagemAumento}%</Text>
         <Text style={styles.texto}>Valor Adicional: R${route.params?.valorAumento}</Text>
-        <Text style={{ fontWeight: 'bold', textAlign: 'center', fontSize: 16, textDecorationLine: 'underline' }}>Valor Final: R${route.params?.valorFinal}</Text>
+        <Text style={{ fontWeight: 'bold', textAlign: 'center', fontSize: 24, textDecorationLine: 'underline', color: 'white' }}>Valor Final: R${route.params?.valorFinal}</Text>
       </View>
     </View>
   );
@@ -21,22 +21,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 40,
     paddingHorizontal: 18,
-    backgroundColor: 'cornsilk'
+    backgroundColor: 'honeydew',
   },
   titulo: {
-    color: 'darkblue',
-    fontSize: 28,
+    color: 'dodgerblue',
+    fontSize: 32,
     fontWeight: '600',
     textAlign: 'center'
   },
   infoContainer: {
     borderColor: 'black',
+    backgroundColor: 'dimgray',
     borderWidth: 1,
     padding: 12,
     width: '100%',
     borderRadius: 12
   },
   texto: {
-    fontSize: 18
+    fontSize: 20,
+    color: 'white'
   },
 });

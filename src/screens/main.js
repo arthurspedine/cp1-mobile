@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { calcularNovoValor } from '../calcularNovoValor';
 
 export default function MainScreen({ navigation }) {
@@ -79,7 +79,12 @@ export default function MainScreen({ navigation }) {
             <Text style={styles.errorMessage}>{porcentagemAumentoErro}</Text>
           )}
         </View>
-        <Button onPress={handleSubmit} title='Calcular Aumento' />
+        <TouchableOpacity
+          // onPress={handleSubmit}
+          onPressIn={handleSubmit}
+          title='Calcular Aumento'
+          style={styles.button}
+        ><Text style={{ fontSize: 24, color: 'white', fontWeight: 'bold' }}>Calcular</Text></TouchableOpacity>
       </View>
     </View>
   );
@@ -89,11 +94,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'cornsilk',
+    backgroundColor: 'honeydew',
     paddingVertical: 48
   },
   titulo: {
-    color: 'darkblue',
+    color: 'dodgerblue',
     fontSize: 48,
     fontWeight: '600',
     textAlign: 'center'
@@ -105,19 +110,26 @@ const styles = StyleSheet.create({
     gap: 12
   },
   label: {
-    fontSize: 18
+    fontSize: 24
   },
   textInput: {
-    fontSize: 16,
+    fontSize: 18,
     borderColor: 'skyblue',
     borderRadius: 10,
     height: 44,
     marginVertical: 4,
-    borderWidth: 1,
+    borderWidth: 2,
     padding: 10,
   },
   errorMessage: {
     color: 'red',
-    fontSize: 14,
+    fontSize: 18,
+  },
+  button: {
+    backgroundColor: 'darkcyan',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 12,
+    paddingVertical: 8
   }
 });
