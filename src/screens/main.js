@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
 import { calcularNovoValor } from '../calcularNovoValor';
 
 export default function MainScreen({ navigation }) {
@@ -36,7 +36,10 @@ export default function MainScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Formulário</Text>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Text style={styles.titulo}>Formulário</Text>
+        <Image source={require('../../assets/calculadora.png')} resizeMode="center" style={{ width: 128, height: 128 }} />
+      </View>
       <View style={styles.formContainer}>
         <View>
           <Text style={styles.label}>Nome do Produto</Text>
@@ -86,7 +89,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'cornsilk',
+    paddingVertical: 48
   },
   titulo: {
     color: 'darkblue',
@@ -101,12 +105,13 @@ const styles = StyleSheet.create({
     gap: 12
   },
   label: {
-    fontSize: 16
+    fontSize: 18
   },
   textInput: {
+    fontSize: 16,
     borderColor: 'skyblue',
     borderRadius: 10,
-    height: 40,
+    height: 44,
     marginVertical: 4,
     borderWidth: 1,
     padding: 10,
